@@ -13,8 +13,3 @@ variable "client_id" {
 variable "client_secret" {
   description = "Azure service principal application Secret."
 }
-
-variable "resource_group_name" {
-  description = "Resource group where the vnet resides."
-  type        = string
-}
