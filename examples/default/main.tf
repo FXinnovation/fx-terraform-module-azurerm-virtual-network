@@ -11,13 +11,13 @@ module "az_vnet_demo" {
   location            = var.location
   tags                = var.tags
 
-  vnet_name          = var.vnet_name
-  vnet_address_space = var.vnet_address_space
-  vnet_dns_servers   = var.vnet_dns_servers
-  subnets_config     = var.subnets_config
+  virtual_network_name          = var.virtual_network_name
+  virtual_network_address_space = var.virtual_network_address_space
+  virtual_network_dns_servers   = var.virtual_network_dns_servers
+  subnets_config                = var.subnets_config
 
   enable_nsg                     = true
-  network_security_groups_config = var.network_security_groups_config
+  network_security_groups_config = var.virtual_network_network_security_groups_config
 
   #enable_rt           = true
   #route_tables_config = var.route_tables_config
