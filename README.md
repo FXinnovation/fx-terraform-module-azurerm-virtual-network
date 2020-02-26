@@ -17,20 +17,23 @@ This virtual network supports custom address spaces, custom DNS servers and bein
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
+| enable\_nsg | Enable or disable NSG deployment. | `bool` | n/a | yes |
 | enabled | Enable or disable module | `bool` | `true` | no |
 | location | Location of the virtual network. | `string` | n/a | yes |
-| network\_ddos\_protection\_plan | Object containing bool about enabling ddos plan and ID of the ddos plan. | `list` | `[]` | no |
+| network\_security\_groups\_config | Object containing deployment information for network security groups. | `any` | n/a | yes |
 | resource\_group\_name | Resource group where the vnet resides. | `string` | n/a | yes |
 | subnets\_config | Object containing deployment information for subnets. | `any` | n/a | yes |
 | tags | Tags to add to the virtual network. | `map` | `{}` | no |
-| vnet\_address\_space | The address space that is used by the virtual network | `list` | <pre>[<br>  "10.0.0.0/8"<br>]</pre> | no |
-| vnet\_dns\_servers | List of IP addresses of DNS servers | `list` | `[]` | no |
-| vnet\_name | Name of the virtual network. | `string` | n/a | yes |
+| virtual\_network\_address\_space | The address space that is used by the virtual network | `list` | <pre>[<br>  "10.0.0.0/8"<br>]</pre> | no |
+| virtual\_network\_dns\_servers | List of IP addresses of DNS servers | `list` | `[]` | no |
+| virtual\_network\_name | Name of the virtual network. | `string` | n/a | yes |
+| virtual\_network\_network\_ddos\_protection\_plan | Object containing bool about enabling ddos plan and ID of the ddos plan. | `list` | `[]` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
+| network\_security\_group\_ids | n/a |
 | subnet\_cidr\_list | CIDR list of the created subnets |
 | subnet\_ids | IDs of the created subnets |
 | subnet\_names | Names list of the created subnet |
