@@ -94,3 +94,82 @@ variable "subnets_config" {
     }
   }
 }
+
+
+variable "network_security_groups_config" {
+  description = "Object containing deployment information for network security groups."
+  type        = any
+  default = {
+    nsg1 = {
+      name = "nsg-1"
+      security_rules = [
+        {
+          name                       = "test1"
+          description                = "My Test 1"
+          priority                   = 101
+          direction                  = "Outbound"
+          access                     = "Allow"
+          protocol                   = "Tcp"
+          source_port_range          = "*"
+          destination_port_range     = "*"
+          source_address_prefix      = "*"
+          destination_address_prefix = "*"
+        },
+        {
+          name                         = "test2"
+          description                  = "My Test 2"
+          priority                     = 102
+          direction                    = "Outbound"
+          access                       = "Allow"
+          protocol                     = "Tcp"
+          source_port_range            = "*"
+          destination_port_range       = "*"
+          source_address_prefix        = "*"
+          destination_address_prefixes = ["192.168.1.5", "192.168.1.6"]
+        },
+        {
+          name                         = "test3"
+          description                  = "My Test 3"
+          priority                     = 103
+          direction                    = "Outbound"
+          access                       = "Allow"
+          protocol                     = "Tcp"
+          source_port_range            = "*"
+          destination_port_ranges      = ["22", "3389"]
+          source_address_prefix        = "*"
+          destination_address_prefixes = ["192.168.1.5", "192.168.1.6"]
+        }
+      ]
+    }
+  }
+}
+
+
+variable "route_tables_config" {
+  description = "Object containing deployment information for route tables."
+  type        = any
+  default = {
+    rt1 = {
+      name                          = "rt1"
+      disable_bgp_route_propagation = false
+      routes = [
+        {
+          name           = "tmp"
+          address_prefix = "8.8.8.8/32"
+          next_hop_type  = "None"
+        },
+        {
+          name           = "tmp2"
+          address_prefix = "192.168.1.0/24"
+          next_hop_type  = "None"
+        },
+        {
+          name                   = "tmp3"
+          address_prefix         = "192.168.2.0/24"
+          next_hop_type          = "VirtualAppliance"
+          next_hop_in_ip_address = "10.0.1.4"
+        }
+      ]
+    }
+  }
+}

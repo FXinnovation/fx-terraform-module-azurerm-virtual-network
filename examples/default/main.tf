@@ -9,10 +9,16 @@ module "az_vnet_demo" {
   source              = "../../"
   resource_group_name = module.az_rg_demo.name
   location            = var.location
-  vnet_name           = var.vnet_name
-  vnet_address_space  = var.vnet_address_space
-  vnet_dns_servers    = var.vnet_dns_servers
-  subnets_config      = var.subnets_config
+  tags                = var.tags
 
-  tags = var.tags
+  vnet_name          = var.vnet_name
+  vnet_address_space = var.vnet_address_space
+  vnet_dns_servers   = var.vnet_dns_servers
+  subnets_config     = var.subnets_config
+
+  enable_nsg                     = true
+  network_security_groups_config = var.network_security_groups_config
+
+  enable_rt           = true
+  route_tables_config = var.route_tables_config
 }
