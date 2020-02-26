@@ -119,29 +119,29 @@ module "az_vnet_demo" {
     }
   }
 
-  #enable_rt           = true
-  #route_tables_config = {
-  #   rt1 = {
-  #     name                          = "rt1${random_string.this.result}"
-  #     disable_bgp_route_propagation = false
-  #     routes = [
-  #       {
-  #         name           = "tmp"
-  #         address_prefix = "8.8.8.8/32"
-  #         next_hop_type  = "None"
-  #       },
-  #       {
-  #         name           = "tmp2"
-  #         address_prefix = "192.168.1.0/24"
-  #         next_hop_type  = "None"
-  #       },
-  #       {
-  #         name                   = "tmp3"
-  #         address_prefix         = "192.168.2.0/24"
-  #         next_hop_type          = "VirtualAppliance"
-  #         next_hop_in_ip_address = "10.0.1.4"
-  #       }
-  #     ]
-  #   }
-  # }
+  enable_rt = true
+  route_tables_config = {
+    rt1 = {
+      name                          = "rt1${random_string.this.result}"
+      disable_bgp_route_propagation = false
+      routes = [
+        {
+          name           = "tmp"
+          address_prefix = "8.8.8.8/32"
+          next_hop_type  = "None"
+        },
+        {
+          name           = "tmp2"
+          address_prefix = "192.168.1.0/24"
+          next_hop_type  = "None"
+        },
+        {
+          name                   = "tmp3"
+          address_prefix         = "192.168.2.0/24"
+          next_hop_type          = "VirtualAppliance"
+          next_hop_in_ip_address = "10.0.1.4"
+        }
+      ]
+    }
+  }
 }

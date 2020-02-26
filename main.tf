@@ -49,3 +49,19 @@ module "network_security_groups" {
     var.tags,
   )
 }
+
+
+module "route_tables" {
+  source              = "./modules/route-tables/"
+  resource_group_name = azurerm_virtual_network.this[0].resource_group_name
+  location            = azurerm_virtual_network.this[0].location
+  subnets_config      = var.subnets_config
+  subnets_ids_map     = module.subnets.subnets_ids_map
+  route_tables_config = var.route_tables_config
+  tags = merge(
+    {
+      "Terraform" = "true"
+    },
+    var.tags,
+  )
+}

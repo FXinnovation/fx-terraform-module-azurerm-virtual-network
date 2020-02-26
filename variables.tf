@@ -20,11 +20,11 @@ variable "virtual_network_name" {
 
 variable "virtual_network_address_space" {
   description = "The address space that is used by the virtual network"
-  default     = ["10.0.0.0/8"]
+  type        = list(string)
 }
 
 variable "virtual_network_dns_servers" {
-  description = "List of IP addresses of DNS servers"
+  description = "Required for custom DNS servers. List of IP addresses of DNS servers. If default value not modified, uses default Azure DNS."
   default     = []
 }
 
@@ -50,17 +50,19 @@ variable "enable_nsg" {
 }
 
 variable "network_security_groups_config" {
-  description = "Object containing deployment information for network security groups."
+  description = "Required with enable_nsg to true .Object containing deployment information for network security groups."
   type        = any
+  default     = {}
 }
 
-# variable "enable_rt" {
-#   description = "Enable or disable route table deployment."
-#   type        = bool
-#   default     = false
-# }
+variable "enable_rt" {
+  description = "Enable or disable route table deployment."
+  type        = bool
+  default     = false
+}
 
-# variable "route_tables_config" {
-#   description = "Object containing deployment information for network security groups."
-#   type        = any
-# }
+variable "route_tables_config" {
+  description = "Required with enable_rt to true . Object containing deployment information for route tables."
+  type        = any
+  default     = {}
+}
