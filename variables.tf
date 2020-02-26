@@ -42,3 +42,13 @@ variable "subnets_config" {
   description = "Object containing deployment information for subnets."
   type        = any
 }
+
+variable "enable_nsg" {
+  description = "Enable or disable NSG deployment."
+  type        = bool
+}
+
+variable "network_security_groups_config" {
+  description = "Object containing deployment information for network security groups."
+  type        = any
+}
