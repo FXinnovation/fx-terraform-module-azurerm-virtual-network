@@ -118,3 +118,13 @@ output "subnets_cidrs_map" {
     0
   )
 }
+
+output "network_security_group_ids" {
+  value = element(
+    concat(
+      module.network_security_groups.network_security_group_ids,
+      list("")
+    ),
+    0
+  )
+}
