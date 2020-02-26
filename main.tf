@@ -29,7 +29,7 @@ resource "azurerm_virtual_network" "this" {
 module "subnets" {
   source               = "./modules/subnets"
   enabled              = var.enabled
-  resource_group_name  = azurerm_virtual_network.this.resource_group_name
-  virtual_network_name = azurerm_virtual_network.this.name
+  resource_group_name  = azurerm_virtual_network.this[0].resource_group_name
+  virtual_network_name = azurerm_virtual_network.this[0].name
   subnets_config       = var.subnets_config
 }
