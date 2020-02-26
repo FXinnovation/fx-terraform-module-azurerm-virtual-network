@@ -128,3 +128,5 @@ output "network_security_group_ids" {
     0
   )
 }
+
+# Could use output for NSG-subnet association

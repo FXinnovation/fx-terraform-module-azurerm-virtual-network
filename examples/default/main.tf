@@ -19,6 +19,6 @@ module "az_vnet_demo" {
   enable_nsg                     = true
   network_security_groups_config = var.network_security_groups_config
 
-  enable_rt           = true
-  route_tables_config = var.route_tables_config
+  #enable_rt           = true
+  #route_tables_config = var.route_tables_config
 }
