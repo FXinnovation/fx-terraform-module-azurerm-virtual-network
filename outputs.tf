@@ -63,3 +63,58 @@ output "virtual_network_dns_servers" {
     0
   )
 }
+
+output "subnet_ids" {
+  description = "IDs of the created subnets"
+  value = element(
+    concat(
+      module.subnets.subnet_ids,
+      list("")
+    ),
+    0
+  )
+}
+
+output "subnet_names" {
+  description = "Names list of the created subnet"
+  value = element(
+    concat(
+      module.subnets.subnet_names,
+      list("")
+    ),
+    0
+  )
+}
+
+output "subnets_ids_map" {
+  description = "Map with names and IDs of the created subnets"
+  value = element(
+    concat(
+      module.subnets.subnets_ids_map,
+      list("")
+    ),
+    0
+  )
+}
+
+output "subnet_cidr_list" {
+  description = "CIDR list of the created subnets"
+  value = element(
+    concat(
+      module.subnets.subnet_cidr_list,
+      list("")
+    ),
+    0
+  )
+}
+
+output "subnets_cidrs_map" {
+  description = "Map with names and CIDRs of the created subnets"
+  value = element(
+    concat(
+      module.subnets.subnets_cidrs_map,
+      list("")
+    ),
+    0
+  )
+}
