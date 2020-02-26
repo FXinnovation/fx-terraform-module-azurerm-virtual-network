@@ -88,13 +88,7 @@ output "subnet_names" {
 
 output "subnets_ids_map" {
   description = "Map with names and IDs of the created subnets"
-  value = element(
-    concat(
-      module.subnets.subnets_ids_map,
-      list("")
-    ),
-    0
-  )
+  value       = module.subnets.subnets_ids_map
 }
 
 output "subnet_cidr_list" {
@@ -110,13 +104,7 @@ output "subnet_cidr_list" {
 
 output "subnets_cidrs_map" {
   description = "Map with names and CIDRs of the created subnets"
-  value = element(
-    concat(
-      module.subnets.subnets_cidrs_map,
-      list("")
-    ),
-    0
-  )
+  value       = module.subnets.subnets_cidrs_map
 }
 
 output "network_security_group_ids" {
