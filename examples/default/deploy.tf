@@ -77,7 +77,7 @@ module "az_vnet_demo" {
   enable_nsg = true
   network_security_groups_config = {
     nsg1 = {
-      name = "nsg-1"
+      name = "nsg-1${random_string.this.result}"
       security_rules = [
         {
           name                       = "test1"
@@ -122,7 +122,7 @@ module "az_vnet_demo" {
   #enable_rt           = true
   #route_tables_config = {
   #   rt1 = {
-  #     name                          = "rt1"
+  #     name                          = "rt1${random_string.this.result}"
   #     disable_bgp_route_propagation = false
   #     routes = [
   #       {

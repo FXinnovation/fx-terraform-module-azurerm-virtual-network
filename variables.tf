@@ -46,6 +46,7 @@ variable "subnets_config" {
 variable "enable_nsg" {
   description = "Enable or disable NSG deployment."
   type        = bool
+  default     = false
 }
 
 variable "network_security_groups_config" {
@@ -56,6 +57,7 @@ variable "network_security_groups_config" {
 # variable "enable_rt" {
 #   description = "Enable or disable route table deployment."
 #   type        = bool
+#   default     = false
 # }
 
 # variable "route_tables_config" {
