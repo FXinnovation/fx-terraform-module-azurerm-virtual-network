@@ -52,3 +52,13 @@ variable "network_security_groups_config" {
   description = "Object containing deployment information for network security groups."
   type        = any
 }
+
+variable "enable_rt" {
+  description = "Enable or disable route table deployment."
+  type        = bool
+}
+
+variable "route_tables_config" {
+  description = "Object containing deployment information for network security groups."
+  type        = any
+}
