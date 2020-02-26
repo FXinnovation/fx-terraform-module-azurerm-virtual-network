@@ -17,7 +17,7 @@ This virtual network supports custom address spaces, custom DNS servers and bein
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
-| enable\_nsg | Enable or disable NSG deployment. | `bool` | n/a | yes |
+| enable\_nsg | Enable or disable NSG deployment. | `bool` | `false` | no |
 | enabled | Enable or disable module | `bool` | `true` | no |
 | location | Location of the virtual network. | `string` | n/a | yes |
 | network\_security\_groups\_config | Object containing deployment information for network security groups. | `any` | n/a | yes |
