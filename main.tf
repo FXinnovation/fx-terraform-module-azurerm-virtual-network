@@ -38,7 +38,7 @@ module "network_security_groups" {
   source                         = "./modules/network-security-groups/"
   enabled                        = var.enable_nsg
   resource_group_name            = azurerm_virtual_network.this[0].resource_group_name
-  location                       = var.location
+  location                       = azurerm_virtual_network.this[0].location
   subnets_config                 = var.subnets_config
   subnets_ids_map                = module.subnets.subnets_ids_map
   network_security_groups_config = var.network_security_groups_config
