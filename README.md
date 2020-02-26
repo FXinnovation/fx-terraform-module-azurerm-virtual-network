@@ -11,7 +11,7 @@ This virtual network supports custom address spaces, custom DNS servers and bein
 
 | Name | Version |
 |------|---------|
-| azurerm | ~> 1.36.0 |
+| azurerm | >=1.36.0, < 2.0.0 |
 
 ## Inputs
 
