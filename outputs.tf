@@ -117,8 +117,6 @@ output "network_security_group_ids" {
   )
 }
 
-# Could use output for NSG-subnet association
-
 output "route_table_ids" {
   value = element(
     concat(
@@ -128,5 +126,3 @@ output "route_table_ids" {
     0
   )
 }
-
-# Could use output for RT-subnet association
