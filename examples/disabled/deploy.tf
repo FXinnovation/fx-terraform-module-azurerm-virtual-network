@@ -30,7 +30,8 @@ module "az_rg_demo" {
 
 module "az_vnet_demo" {
   source              = "../../"
+  enabled             = false
   resource_group_name = module.az_rg_demo.name
   location            = local.location
-  enabled             = false
+  subnets_config      = {}
 }
