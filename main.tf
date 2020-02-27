@@ -52,7 +52,8 @@ module "network_security_groups" {
 
 
 module "route_tables" {
-  source              = "./modules/route-tables/"
+  source = "./modules/route-tables/"
+  #source              = "git::https://scm.dazzlingwrench.fxinnovation.com/fxinnovation-public/terraform-module-azurerm-routetable.git?ref=0.3.0"
   resource_group_name = azurerm_virtual_network.this[0].resource_group_name
   location            = azurerm_virtual_network.this[0].location
   subnets_config      = var.subnets_config
