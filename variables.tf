@@ -14,13 +14,15 @@ variable "location" {
 }
 
 variable "virtual_network_name" {
-  description = "Name of the virtual network."
+  description = "Required if you want to deploy a virtual network. Name of the virtual network."
   type        = string
+  default     = "default"
 }
 
 variable "virtual_network_address_space" {
-  description = "The address space that is used by the virtual network"
+  description = "Required if you want to deploy a virtual network. The address space that is used by the virtual network"
   type        = list(string)
+  default     = ["10.0.0.0/8"]
 }
 
 variable "virtual_network_dns_servers" {
@@ -39,8 +41,14 @@ variable "tags" {
 }
 
 variable "subnets_config" {
-  description = "Object containing deployment information for subnets."
+  description = "Required if you want to deploy a virtual network. Object containing deployment information for subnets."
   type        = any
+  default = {
+    defaultsn = {
+      name           = "defaultsn"
+      address_prefix = "10.0.1.0/24"
+    },
+  }
 }
 
 variable "enable_nsg" {
