@@ -52,6 +52,7 @@ module "network_security_groups" {
 
 module "route_tables" {
   source              = "./modules/route-tables/"
+  enabled             = var.enable_rt
   resource_group_name = var.enabled ? azurerm_virtual_network.this[0].resource_group_name : ""
   location            = var.enabled ? azurerm_virtual_network.this[0].location : ""
   subnets_config      = var.subnets_config
