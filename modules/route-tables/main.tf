@@ -23,7 +23,7 @@ resource "azurerm_route_table" "this" {
   disable_bgp_route_propagation = lookup(each.value, "disable_bgp_route_propagation", null)
 
   dynamic "route" {
-    for_each = lookup(each.value, "routes", null)
+    for_each = each.value["routes"]
     content {
       name                   = lookup(route.value, "name", null)
       address_prefix         = lookup(route.value, "address_prefix", null)

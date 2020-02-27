@@ -50,7 +50,6 @@ module "network_security_groups" {
   )
 }
 
-
 module "route_tables" {
   source = "./modules/route-tables/"
   #source              = "git::https://scm.dazzlingwrench.fxinnovation.com/fxinnovation-public/terraform-module-azurerm-routetable.git?ref=0.3.0"
