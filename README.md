@@ -7,16 +7,23 @@ This module is used to deploy a single virtual network.
 This virtual network supports custom address spaces, custom DNS servers and being linked to a standard SKU DDoS protection plan (Note that you have a limit of one plan per region (Azure limitation)).
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+| azurerm | >= 2.0.0 |
+
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azurerm | >=1.36.0, < 2.0.0 |
+| azurerm | >= 2.0.0 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | enable\_nsg | Enable or disable NSG deployment. | `bool` | `false` | no |
 | enable\_rt | Enable or disable route table deployment. | `bool` | `false` | no |
 | enabled | Enable or disable module | `bool` | `true` | no |

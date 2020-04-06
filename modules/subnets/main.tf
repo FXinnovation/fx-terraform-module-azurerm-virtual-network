@@ -10,12 +10,6 @@ resource "azurerm_subnet" "this" {
   address_prefix       = each.value["address_prefix"]
   service_endpoints    = lookup(each.value, "service_endpoints", null)
 
-  // Avoid collision with subnet_association and route_table_association
-  // Can be removed when azurerm v2.0 will be released
-  lifecycle {
-    ignore_changes = [route_table_id, network_security_group_id]
-  }
-
   dynamic "delegation" {
     for_each = lookup(each.value, "delegation", [])
     content {
